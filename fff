@@ -16,6 +16,7 @@ pipeline {
              bat '''
              git config --global user.email "alialmubarak.ite@gmail.com"
              git config --global user.name "alimob7ark"
+             git config --global user.password "ali928L!gpgh"
              git add .  
              git commit -m "Update Version" 
              git push 

@@ -12,14 +12,14 @@ pipeline {
                           
              echo "next version = ${NEXT_VERSION}"  
              bat 'node version-updater.js %NEXT_VERSION%'
-
            
              bat '''
              git config --global user.email "alialmubarak.ite@gmail.com"
              git config --global user.name "alimob7ark"
+             git checkout main
              git add .  
              git commit -m "Update Version" 
-             git push origin main
+             git push 
              '''
              
               

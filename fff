@@ -19,7 +19,7 @@ pipeline {
              git config --global user.name "alimob7ark"
              git add .  
              git commit -m "Update Version" 
-             git push
+             git push origin main
              '''
              
               

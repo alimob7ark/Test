@@ -12,11 +12,11 @@ pipeline {
                           
              echo "next version = ${NEXT_VERSION}"  
              bat 'node version-updater.js %NEXT_VERSION%'
-             git url: "https://github.com/alimob7ark/Test.git",
-    credentialsId: 'github',
-    branch: main
+
            
              bat '''
+             git config --global user.email "alialmubarak.ite@gmail.com"
+             git config --global user.name "alimob7ark"
              git add .  
              git commit -m "Update Version" 
              git push

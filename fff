@@ -12,16 +12,17 @@ pipeline {
                           
              echo "next version = ${NEXT_VERSION}"  
              bat 'node version-updater.js %NEXT_VERSION%'
-             withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'git-tool')]) {
-             bat '''
+             git url: "https://github.com/alimob7ark/Test.git",
+    credentialsId: 'github',
+    branch: main
            
-          
+             bat '''
              git add .  
              git commit -m "Update Version" 
-              bat 'git push'
+             git push
              '''
              
-              }
+              
              
            }
         }

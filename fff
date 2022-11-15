@@ -19,6 +19,7 @@ pipeline {
              git config --global user.password "ali928L!gpgh"
              git add .  
              git commit -m "Update Version" 
+             
              git push 
              git push origin HEAD:main
              '''

@@ -1,0 +1,22 @@
+pipeline {
+    
+     environment {
+        NEXT_VERSION = nextVersion(writeVersion: false)
+    }
+    
+    stages {
+        stage('Update Version') { 
+  
+           steps {
+                          
+             echo "next version = ${NEXT_VERSION}"  
+             bat '''
+           
+             node version-updater.js %VERSION%
+             git add .  
+             git commit -m "Update Version"  
+             git push '''
+           }
+        }
+    }
+}

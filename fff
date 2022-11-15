@@ -16,12 +16,11 @@ pipeline {
              bat '''
              git config --global user.email "alialmubarak.ite@gmail.com"
              git config --global user.name "alimob7ark"
-             git checkout main
              git add .  
              git commit -m "Update Version" 
-             git push 
+             git push -u origin main 
              '''
-             
+
              
               
              

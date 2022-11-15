@@ -11,14 +11,16 @@ pipeline {
            steps {
                           
              echo "next version = ${NEXT_VERSION}"  
+             bat 'node version-updater.js %NEXT_VERSION%'
+             withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'git-tool')]) {
              bat '''
            
-             node version-updater.js %VERSION%
+          
              git add .  
              git commit -m "Update Version" 
-             '''
-             withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'git-tool')]) {
               bat 'git push'
+             '''
+             
               }
              
            }

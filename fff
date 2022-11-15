@@ -15,8 +15,12 @@ pipeline {
            
              node version-updater.js %VERSION%
              git add .  
-             git commit -m "Update Version"  
-             git push '''
+             git commit -m "Update Version" 
+             '''
+             withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'git-tool')]) {
+              bat 'git push'
+              }
+             
            }
         }
     }

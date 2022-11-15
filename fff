@@ -18,8 +18,12 @@ pipeline {
              git remote set-url origin https://alimob7ark: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@github.com/alimob7ark/Test.git
              git add .  
              git commit -m "Update Version" 
-             git.exe push -f origin main 
+              
              '''
+             withCredentials([gitUsernamePassword(credentialsId: 'github',
+                 gitToolName: 'git-tool')]) {
+  bat 'git.exe push -f origin main'
+}
 
              
               

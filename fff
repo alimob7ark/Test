@@ -1,5 +1,6 @@
 pipeline {
-    
+     agent any
+     
      environment {
         NEXT_VERSION = nextVersion(writeVersion: false)
     }

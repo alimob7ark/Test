@@ -1,7 +1,7 @@
 pipeline {
     
      agent any
-     
+
      environment {
         NEXT_VERSION = nextVersion(writeVersion: false)
     }
@@ -10,7 +10,6 @@ pipeline {
         stage('Update Version') { 
   
            steps {
-             bat 'cd Test'             
              echo "next version = ${NEXT_VERSION}"  
              echo "Current workspace is ${env.WORKSPACE}"
              bat 'node version-updater.js %NEXT_VERSION%'

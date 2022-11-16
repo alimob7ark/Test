@@ -20,6 +20,7 @@ pipeline {
              git config --get user.email
              git config --global user.name "alialmubarak.ite@gmail.com"
              git add .
+              git --version
              git commit -m "Update Version"
              git.exe push -f origin main
 

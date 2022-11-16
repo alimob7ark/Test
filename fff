@@ -16,7 +16,7 @@ pipeline {
                  gitToolName: 'git-tool')]) {
                     bat '''
 
-             git remote set-url origin https://alimob7ark@github.com/alimob7ark/Test.git
+             git changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/alimob7ark/Test.git'
              git config --get user.email
              git config --global user.name "alialmubarak.ite@gmail.com"
              git add .

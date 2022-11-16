@@ -24,7 +24,7 @@ pipeline {
              git config --get user.name
              git add .  
              git commit -m "Update Version" 
-  bat 'git.exe push -f origin main'
+             git.exe push -f origin main
 
               
              '''

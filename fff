@@ -19,9 +19,9 @@ pipeline {
                  gitToolName: 'git-tool')]) {
                              bat '''
     
-             git remote set-url origin https://alimob7ark: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@github.com/alimob7ark/Test.git
+             git remote set-url origin https://alialmubarak.ite@gmail.com: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@github.com/alimob7ark/Test.git
              git config --get user.email
-             git config --get user.name
+             git config --global user.name "alialmubarak.ite@gmail.com"
              git add .  
              git commit -m "Update Version" 
              git.exe push -f origin main

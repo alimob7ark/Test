@@ -10,7 +10,6 @@ pipeline {
             steps {
                 echo "next version = ${NEXT_VERSION}"
                 echo "Current workspace is ${env.WORKSPACE}"
-                bat 'node version-updater.js %NEXT_VERSION%'
 
                 withCredentials([gitUsernamePassword(credentialsId: 'github',
                  gitToolName: 'git-tool')]) {
@@ -18,8 +17,9 @@ pipeline {
               git checkout main
              git config --get user.email
              git config --global user.name "alialmubarak.ite@gmail.com"
+             node version-updater.js %NEXT_VERSION%
              git add .
-             
+
              git commit -m "Update Version"
              git.exe push -f origin main
 

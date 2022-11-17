@@ -15,12 +15,11 @@ pipeline {
                 withCredentials([gitUsernamePassword(credentialsId: 'github',
                  gitToolName: 'git-tool')]) {
                     bat '''
-
-             git changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/alimob7ark/Test.git'
+              git checkout main
              git config --get user.email
              git config --global user.name "alialmubarak.ite@gmail.com"
              git add .
-              git --version
+             
              git commit -m "Update Version"
              git.exe push -f origin main
 
